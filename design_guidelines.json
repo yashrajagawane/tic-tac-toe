@@ -1,0 +1,90 @@
+{
+  "theme_strategy": {
+    "mode": "dark",
+    "rationale": "Electric & Neon archetype mixed with Glassmorphism 2.0 (Spatial UI, liquid glass). A deep void dark theme to amplify neon accents, giving it a premium immersive web game feel reminiscent of high-end titles on Poki or CrazyGames. Absolute prohibition on flat, generic light-theme SaaS aesthetics."
+  },
+  "typography": {
+    "headings": {
+      "font": "Unbounded",
+      "weights": ["400", "700", "900"],
+      "rules": "Must use tight letter spacing (tracking-tight). Do not use Inter or Space Grotesk for headings."
+    },
+    "body": {
+      "font": "Outfit",
+      "weights": ["300", "400", "500"]
+    },
+    "instructions_to_main_agent": "Add Google Fonts links to public/index.html or import in CSS. Use Unbounded for the game title, player names, and scores. Use Outfit for settings, history, and small labels."
+  },
+  "colors": {
+    "background": "#05050A",
+    "glass_panel": "rgba(20, 20, 30, 0.4)",
+    "neon_accents": {
+      "primary_purple": "#8B5CF6",
+      "glow_purple": "rgba(139, 92, 246, 0.5)",
+      "x_color": "#F472B6",
+      "o_color": "#22D3EE"
+    },
+    "forbidden_colors": ["#7351B7", "teal green", "#1B93A4"]
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Use backdrop-blur-2xl with bg-black/40 and a delicate 1px border-white/10. Do not use pure transparent backgrounds if content scrolls under.",
+    "neon_glows": "Construct neon effects using multi-layered drop shadows (e.g., drop-shadow-[0_0_15px_rgba(139,92,246,0.6)]). The X and O marks MUST have a strong outer glow matching their respective colors.",
+    "background_texture": "Use the provided wavy abstract image, heavily darkened with a black/gradient overlay (bg-black/80 or gradient overlay), so it sits quietly in the background, offering ambient texture rather than distraction."
+  },
+  "grids_and_layouts": {
+    "dashboard_layout": "Bento Grid approach for the surrounding UI. Central 3x3 game board. Flanked by vertical glass panels for Scoreboard, Match History, and Game Controls.",
+    "spacing": "Generous spacing. p-8 or p-12 for main containers. Ensure the 3x3 grid has a healthy gap (gap-3 or gap-4).",
+    "board_grid": "The Tic Tac Toe board must be a CSS Grid (grid-cols-3) nested inside a premium glass container."
+  },
+  "components": {
+    "cell": "Square aspect ratio. Deep dark glassmorphic button. On hover: slight lift, border glows slightly with the current player's color. On click: explosive ripple/pop animation.",
+    "turn_indicator": "Pill-shaped glass container at the top, glowing subtly with the active player's color and showing 'Player X Turn' or 'Player O Turn'.",
+    "modals_and_overlays": "Settings and Win Popup should completely abandon the default white card look. Use dark glass panels with glowing neon borders for all dialogs.",
+    "buttons": "Pill-shaped or slightly rounded, using 'The Tracing Beam' or a solid neon glow on hover. Never rely on generic Shadcn default button styling without heavy customization."
+  },
+  "motion": {
+    "libraries": ["framer-motion", "canvas-confetti"],
+    "board_entrance": "Staggered fade-up for each cell using Framer Motion.",
+    "mark_placement": "Spring animation (scale up from 0 to 1 with a bouncy spring config) when X or O is placed.",
+    "win_effect": "Draw a glowing line across the winning cells. Fire canvas-confetti bursts from the center. Howler.js plays a premium 'success' chime.",
+    "hover_states": "Smooth transitions (scale 1.05, increase brightness of glow) on all interactive elements."
+  },
+  "media": {
+    "images": [
+      {
+        "url": "https://images.unsplash.com/photo-1638272181967-7d3772a91265?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxkYXJrJTIwYWJzdHJhY3QlMjBuZW9uJTIwcHVycGxlJTIwdGV4dHVyZSUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzgzODUxNjU2fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract purple wavy background texture",
+        "usage": "Set as a fixed, cover background image for the main application container. Overlay with a dark mask (like bg-black/80 or radial-gradient) to ensure high text contrast."
+      }
+    ],
+    "icons_library": "lucide-react for standard UI (settings, history, close). DO NOT use AI emojis."
+  },
+  "accessibility": {
+    "contrast": "Ensure the bright neon text on dark glass meets APCA standards. Use text-shadow if necessary for readability.",
+    "data_testid": "All interactive elements MUST include data-testid. Example: data-testid='cell-0-0', data-testid='restart-button', data-testid='difficulty-select'.",
+    "motion_preference": "Respect prefers-reduced-motion for heavy Framer animations.",
+    "keyboard": "The 3x3 grid MUST be fully navigable via keyboard."
+  },
+  "instructions_to_main_agent": [
+    "IMPORTANT: You have .js and .jsx files, not .tsx. Implement all React components as standard JavaScript (with JSDoc if you want types) or straightforward JSX.",
+    "Do not build a basic college project game. The entire screen should feel like an immersive neon arcade machine. Embrace extreme polish.",
+    "Use Howler.js for discrete, satisfying sounds: a subtle tick on cell hover, a satisfying pop on click, a win fanfare, and a tie buzz.",
+    "Implement a robust Minimax algorithm for 'Impossible' mode, ensuring it never loses. Add Easy (Random) and Medium (Heuristic) modes.",
+    "Save Match History (Player X vs Player O, Outcome, Date) and Scoreboard (X wins, O wins, Draws) in Local Storage.",
+    "Create a beautiful Landing Page (or full-screen modal intro) that transitions smoothly into the game board.",
+    "Ensure 'Player vs AI' vs 'Local Multiplayer' selection is intuitive and prominent."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic, 'on distribution' outputs. Do not make generic centered layouts, simplistic gradients, or uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., `transition: all`). This results in breaking transforms. Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container, i.e., do not add `.App { text-align: center; }` in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Use `sonner` for toasts. Sonner component should be located in `/app/frontend/src/components/ui/sonner.jsx` (adapt to js)."
+  ]
+}

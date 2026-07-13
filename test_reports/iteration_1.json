@@ -1,0 +1,23 @@
+{
+  "summary": "Frontend smoke test for Neon.Tac Tic Tac Toe. Landing page, mode/difficulty/symbol selection, Local mode win flow with confetti + WinPopup, Undo, Restart, Home nav, AI mode auto-move, Settings modal, and Impossible AI all verified via Playwright on the public URL.",
+  "tested_scope": ["frontend", "integration"],
+  "passed": [
+    "Landing loads at / with all data-testids (mode-ai-btn, mode-local-btn, difficulty-easy/medium/hard/impossible, symbol-x-btn, symbol-o-btn, start-btn, hero-start-btn, landing-settings-btn)",
+    "start-btn navigates to /play with correct query params (local & ai)",
+    "Local mode: X wins on 0,1,2 -> winning line rendered, WinPopup appears, canvas-confetti injected",
+    "Scoreboard increments (Player X shown as leader) and Match History records 'Player X won'",
+    "play-again-btn resets the board (cell-0 empty after click)",
+    "Undo restores cell to empty and reverts current player",
+    "Restart resets board (cell-0 empty after click)",
+    "home-btn navigates back to /",
+    "AI mode: human X move + AI response works (Impossible AI took cell-0 as O when human played center)",
+    "settings-btn opens settings-panel modal in-game",
+    "Timer & move counter visible in GameInfoBar (observed 0:32, 2 moves)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (frontend-only app)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "No backend endpoints exist (client-only app with LocalStorage). Persistence, draw scenario, mobile viewport, and settings toggles (sound/theme/reset-stats) were not exhaustively exercised in this smoke pass — full testing agent should cover them."
+}
