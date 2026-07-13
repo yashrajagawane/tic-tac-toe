@@ -19,8 +19,11 @@ Clean UI • Smart AI Opponent • Score Tracking • Fully Responsive
 
 <div align="center">
 
-<!-- Replace with an actual screenshot or GIF of the game -->
-<img src="https://via.placeholder.com/900x500?text=Tic+Tac+Toe+Screenshot" width="100%" alt="Tic Tac Toe Gameplay Preview" />
+<img src="./assets/landing-page.png" alt="Landing Page" width="100%">
+
+<br><br>
+
+<img src="./assets/gameplay.png" alt="Gameplay" width="100%">
 
 </div>
 
