@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🎮 Tic Tac Toe — React Game
-
-### A modern, intelligent Tic Tac Toe built with React
+# 🎮 Tic Tac Toe
 
 Clean UI • Smart AI Opponent • Score Tracking • Fully Responsive
 
