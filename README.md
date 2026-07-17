@@ -297,6 +297,6 @@ If you found this project useful or interesting, consider giving it a **star** o
 
 <div align="center">
 
-**Thank you for checking out this project! 🎮**
+**Thank you for checking out this project...! 🎮**
 
 </div>
