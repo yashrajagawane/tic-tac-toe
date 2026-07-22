@@ -15,7 +15,7 @@ Clean UI • Smart AI Opponent • Score Tracking • Fully Responsive
 
 ---
 
-## 📸 Preview
+## 📸 Preview : 
 
 <div align="center">
 
